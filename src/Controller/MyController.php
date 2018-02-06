@@ -5,7 +5,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class PresentationController extends Controller
+class MyController extends Controller
 {
 
     /**
@@ -108,6 +108,21 @@ class PresentationController extends Controller
         return $this->render('gods.html.twig', array("god"=>$goodPerson));
 
         }
+
+    /**
+     * @Route("/about")
+     */
+
+    public function about()
+    {
+
+        return $this->render('base.html.twig');
+
+
+    }
+
+
+
 }
 
 
