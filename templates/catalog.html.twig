@@ -1,0 +1,13 @@
+<ul>
+    {% for current in catalog %}
+        <li>
+            {{current['name']}}
+            <a href="{{current['url']}}">details</a>
+
+            {# direct link instead of details#}
+
+            {#<a href="{{current['url']}}">{{current['name']}}</a>#}
+
+        </li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,32 @@
+<html>
+<body>
+<h1>Nordic Gods</h1>
+
+<a href="{{ path('home') }}">Home</a><br>
+
+
+{% if female is defined%}
+    <h2>Female</h2>
+    <ul>
+        {% for goddess in female %}
+            <li>{{ goddess }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% if male is defined %}
+    <h2>Male</h2>
+    <ul>
+        {% for god in male %}
+            <li>{{ god }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% if god is defined %}
+{{ god }}
+{% endif %}
+
+
+</body>
+</html>

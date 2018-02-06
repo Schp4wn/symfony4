@@ -1,0 +1,17 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+#
+#home:
+#    path: /
+#    controller: App\Controller\HomeController::display
+#
+#presentation:
+#    path: /presentation
+#    controller: App\Controller\PresentationController::display
+#
+#catalog:
+#    path: /catalog
+#    controller: App\Controller\CatalogController::display
+#
+
