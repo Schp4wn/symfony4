@@ -1,10 +1,26 @@
-<h1>Hello World</h1>
-<br>
-{% include('navbar.html.twig') %}
-<a href="{{ path('home') }}">Home</a><br>
-<a href="{{ path('app_my_display') }}">Presentation</a><br>
-<a href="{{ path('app_my_yggdrasil') }}">Yggdrasil</a><br>
-<a href="{{ path('app_my_gods') }}">Gods</a><br>
+{% extends 'base.html.twig' %}
+
+{% block slide %}
+    {% include('slideshow.html.twig') %}
+{% endblock %}
+
+{% block main %}
+    {% include('maincontent.html.twig') %}
+{% endblock %}
+
+{% block footer %}
+    {% include('footer.html.twig') %}
+{% endblock %}
+
+
+
+
+
+
+{#<a href="{{ path('home') }}">Home</a>#}
+{#<a href="{{ path('app_my_display') }}">Presentation</a>#}
+{#<a href="{{ path('app_my_yggdrasil') }}">Yggdrasil</a>#}
+{#<a href="{{ path('app_my_gods') }}">Gods</a>#}
 
 
 
