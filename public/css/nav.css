@@ -4,12 +4,95 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-half-slider/blob/master/LICENSE)
  */
 
-.carousel-item {
-  height: 65vh;
-  min-height: 300px;
-  background: no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+
+
+/*ol li {*/
+  /*margin-bottom: 0;*/
+/*}*/
+
+/*header.navbar {*/
+  /*background-image: none;*/
+  /*background-color: transparent;*/
+/*}*/
+
+
+/*h1, .h1 {*/
+  /*color: #fff;*/
+  /*font-size: 52px;*/
+  /*font-weight: bolder;*/
+  /*text-transform: uppercase;*/
+  /*margin-bottom: 21px;*/
+  /*text-shadow: 0 0 15px rgba(55,169,255,1);*/
+
+/*}*/
+
+/*h2, .h2 {*/
+  /*color: #555;*/
+  /*padding-bottom: 13px;*/
+  /*border-bottom: 4px solid #ccc;*/
+  /*margin-bottom: 20px;*/
+  /*text-transform: uppercase;*/
+  /*font-weight: normal;*/
+  /*font-size: 18pt;*/
+/*}*/
+
+
+/*.navbar .blue {*/
+  /*background: transparent;*/
+/*}*/
+
+
+
+
+
+
+
+/*!* MOBILE *!*/
+
+/*@media (max-width: 1200px) {*/
+  /*h1, .h1 {*/
+    /*font-size: 31px;*/
+  /*}*/
+
+  /*.media-object {*/
+    /*height: 140px;*/
+  /*}*/
+/*}*/
+
+/*@media (max-width: 992px) {*/
+  /*.homepage .sub-heading {*/
+    /*font-size: 14pt;*/
+    /*font-weight: normal;*/
+  /*}*/
+
+  /*.media-object {*/
+    /*max-width: 100%;*/
+    /*width: 110px;*/
+    /*height: 110px;*/
+  /*}*/
+
+  /*.logo-padding {*/
+    /*padding-left: 15px;*/
+    /*padding-right: 15px;*/
+  /*}*/
+/*}*/
+
+/*@media(max-width: 768px) {*/
+  /*.homepage {*/
+    /*padding-top: 84px;*/
+    /*padding-left: 25px;*/
+    /*padding-right: 25px;*/
+  /*}*/
+
+  /*.media-object {*/
+    /*width: 100%;*/
+    /*height: 250px;*/
+  /*}*/
+/*}*/
+
+/*@media(max-width:540px) {*/
+
+  /*.media-object {*/
+    /*width: 250px;*/
+    /*height: 135px;*/
+  /*}*/
