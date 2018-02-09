@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Roms:</h1>
+     {% if romList is defined %}
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Year</th>
+                    <th>Rating</th>
+                    <th>tested?</th>
+                    <th>Publisher</th>
+                    <th>Developer</th>
+                </tr>
+                    {% for rom in romList %}
+                        <tr>
+                            <td>{{ rom.name }}</td>
+                            <td>{{ rom.description }}</td>
+                            <td>{{ rom.rating }}</td>
+                            <td>{{ rom.istested }}</td>
+                            <td>{{ rom.publisher }}</td>
+                            <td>{{ rom.developer }}</td>
+                        </tr>
+                    {% endfor %}
+            </table>
+      {% endif %}
+
+{% endblock %}
