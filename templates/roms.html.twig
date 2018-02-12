@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    <h1>Roms:</h1>
+{% block main %}
      {% if romList is defined %}
-            <table>
+    <div style="overflow-x:auto;">
+            <table id="roms">
                 <tr>
                     <th>Name</th>
                     <th>Description</th>
@@ -12,18 +12,29 @@
                     <th>tested?</th>
                     <th>Publisher</th>
                     <th>Developer</th>
+                    <th>Mod</th>
+                    <th>Del</th>
                 </tr>
                     {% for rom in romList %}
                         <tr>
-                            <td>{{ rom.name }}</td>
+                            <td><a href="{{ path("rom_show", {'id':rom.id}) }}">{{ rom.name }}</a></td>
                             <td>{{ rom.description }}</td>
+                            <td>{{ rom.year }}</td>
                             <td>{{ rom.rating }}</td>
                             <td>{{ rom.istested }}</td>
                             <td>{{ rom.publisher }}</td>
                             <td>{{ rom.developer }}</td>
+                            <td><a href="{{ path("rom_edit", {'id':rom.id}) }}">Modify</a></td>
+                            <td><a href="{{ path("rom_delete", {'id':rom.id}) }}">Delete</a></td>
                         </tr>
                     {% endfor %}
             </table>
+    </div>
       {% endif %}
 
+{% endblock %}
+
+
+{% block footer %}
+    {% include('footer.html.twig') %}
 {% endblock %}
