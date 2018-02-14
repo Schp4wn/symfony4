@@ -2,19 +2,38 @@
 
 
     {% block main %}
-<div class="container">
-       <h2> {{rom.name}}</h2>
-    
-        {{rom.id}}
-        {{rom.rating}}
-        {{rom.publisher}}
-        {{rom.developer}}
-</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h3> {{rom.name}}</h3>
+                    <hr class="under">
+                    <p class="lead">
+                        {{rom.description}}
+                    </p>
+                    <p>
+                        {{rom.description}}
+                    </p>
+                    <ul class="list-unstyled">
+                        <li>Year: {{rom.year}}</li>
+                        <li>Developer: {{rom.developer}}</li>
+                        <li>Publisher: {{rom.publisher}}</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/en/a/a5/Super_Mario_Bros._3_coverart.png" alt="Card image cap">
+                </div>
+            </div>
+        </div>
+
+
+
+    <div class="container">
+       <button><a href="{{ path('rom_list') }}">Back</a></button>
+        <button><a href="{{ path("rom_edit", {'id':rom.id}) }}">Modify</a></button>
+    </div>
     {% endblock %}
 
 
-
-
-    {% block footer %}
-    {% endblock %}
+    {#{% block footer %}#}
+    {#{% endblock %}#}
 

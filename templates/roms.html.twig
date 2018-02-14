@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block main %}
+    <div class="container">
     {% if romList is defined %}
         <div style="overflow-x:auto;">
             <table id="roms">
@@ -12,7 +13,6 @@
                     <th>tested?</th>
                     <th>Publisher</th>
                     <th>Developer</th>
-                    <th>Mod</th>
                     <th>Del</th>
                 </tr>
                 {% for rom in romList %}
@@ -22,13 +22,13 @@
                         <td>{{ rom.year }}</td>
                         <td>{{ rom.rating }}</td>
                         <td>{{ rom.istested }}</td>
-                        <td>{{ rom. }}</td>
+                        <td>{{ rom.publisher }}</td>
                         <td>{{ rom.developer }}</td>
-                        <td><a href="{{ path("rom_edit", {'id':rom.id}) }}">Modify</a></td>
                         <td><a href="{{ path("rom_delete", {'id':rom.id}) }}">Delete</a></td>
                     </tr>
                 {% endfor %}
             </table>
+        </div>
         </div>
     {% endif %}
 

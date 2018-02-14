@@ -1,3 +1,82 @@
+@media (min-width: 768px){
+    .navbar
+        border-radius: 0;
+    }
+
+
+section.canvas-wrapper {
+    min-height: 30vh;
+    background-image: url("../img/background.png");
+    background-position: top center;
+    margin-bottom: 20px;
+}
+
+
+.footer {
+    padding: 2vh 0 10vh;
+    line-height: 22px;
+    color: #000;
+    background-image: url("../img/background.png");
+    background-position: 1500px 300px;
+    /*background-position: top center;*/
+    /*background-repeat: no-repeat;*/
+    -webkit-font-smoothing: antialiased;
+}
+
+.footer p {
+    margin: 26px 0;
+}
+
+.footer__menu {
+    margin-top: 21px;
+    font-size: 14px;
+    line-height: 26px;
+}
+
+.footer__menu a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer__copyright {
+    line-height: 16px;
+    opacity: .3;
+}
+
+.footer__copyright svg {
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+.footer__copyright a {
+    color: inherit;
+}
+
+.footer__copyright a:first-child {
+    text-decoration: none;
+}
+
+.footer__links>a {
+    text-decoration: none;
+    font-size: 0;
+    opacity: .3;
+    transition: opacity 200ms ease;
+}
+
+.footer__links>a:hover {
+    opacity: 1;
+}
+
+.footer__links>a+a {
+    margin-left: 10px;
+}
+
+
+
+
+
+
+
 
 #forms {
     background-color: #f2f2f2;
@@ -173,7 +252,11 @@ ul li {
     z-index: 1040;
     min-height: 66px;
     background-image: url("../img/background.png");
+    margin-bottom: 0;
+    border-radius: 0;
 }
+
+
 
 .navbar-nav {
     float: left;
@@ -278,15 +361,14 @@ ul li {
 .menu_roms,
 .menu_home,
 .menu_help,
-.menu_play,
+.menu_login,
 .menu_chest,
 .logo {
     background-image: url("../img/sprites.png");
-    content: "";
-    margin: 0 auto;
+    /*margin: 0 auto; !important;*/
 }
 
-.menu_play {
+.menu_login {
     background-position: -609px -7px;
     width: 30px;
     height: 30px;
@@ -478,15 +560,22 @@ header .logo {
     header .logo {
         width: 200px
     }
+    .navbar{
+        border-radius: 0;
+    }
 }
 
 @media (max-width: 767px) {
     h1 {
         font-size: 2em;
     }
+    .navbar{
+        border-radius: 0;
+    }
+
     header.navbar {
         background: #0767be;
-        background-image: none;
+
     }
     header .logo .logo-image i {
         width: 38px;
@@ -504,12 +593,15 @@ header .logo {
         font-size: 35px
     }
 
-    /*@media (min-width: 768px) {*/
-        /*.navbar.navbar-fixed-top.slide-active {*/
-            /*position: fixed*/
-        /*}*/
-        /*.navbar-header {*/
-            /*left: 0;*/
-        /*}*/
-    /*}*/
+    @media (min-width: 768px) {
+        .navbar.navbar-fixed-top.slide-active {
+            position: fixed
+        }
+        .navbar-header {
+            left: 0;
+        }
+        .navbar{
+            border-radius: 0;
+        }
+    }
 }
