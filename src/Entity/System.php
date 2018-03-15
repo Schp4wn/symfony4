@@ -5,9 +5,9 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\RomRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\SystemRepository")
  */
-class Rom
+class System
 {
     /**
      * @ORM\Id
@@ -31,16 +31,7 @@ class Rom
      */
     private $year;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $rating;
-
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $istested;
-
+     
     /**
      * @ORM\Column(type="string", length=100)
      */
@@ -120,37 +111,7 @@ class Rom
         $this->year = $year;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getRating()
-    {
-        return $this->rating;
-    }
-
-    /**
-     * @param mixed $rating
-     */
-    public function setRating($rating): void
-    {
-        $this->rating = $rating;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getIstested()
-    {
-        return $this->istested;
-    }
-
-    /**
-     * @param mixed $istested
-     */
-    public function setIstested($istested): void
-    {
-        $this->istested = $istested;
-    }
+    
 
     /**
      * @return mixed

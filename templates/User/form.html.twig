@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{# {% block head_title %}
+    Receet - Utilisateurs
+{% endblock %}
+{% block title %}
+    Receet - Utilisateurs
+{% endblock %} #}
+
+{% block body %}
+    <p>{{ message }}</p>
+
+    {{ form(form, {'attr': {'novalidate': 'novalidate'}}) }} {# Desactiver les validations Navigateur #}
+    {{ form_start(form)     }}
+    {{ form_widget(form)    }}
+    {{ form_end(form)       }}
+{% endblock %}

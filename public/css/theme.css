@@ -131,22 +131,22 @@ button[type=submit]:hover {
 
 
 /*Custom Table CSS*/
-#roms {
+#table {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
 }
 
-#roms td, #roms th {
+#table td, #table th {
     border: 1px solid #ddd;
     padding: 8px;
 }
 
-#roms tr:nth-child(even){background-color: #f2f2f2;}
+#table tr:nth-child(even){background-color: #f2f2f2;}
 
-#roms tr:hover {background-color: #ddd;}
+#table tr:hover {background-color: #ddd;}
 
-#roms th {
+#table th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;

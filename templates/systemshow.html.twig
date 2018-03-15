@@ -5,22 +5,22 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <h3> {{rom.name}}</h3>
+                    <h3> {{system.name}}</h3>
                     <hr class="under">
                     <p class="lead">
-                        {{rom.description}}
+                        {{system.description}}
                     </p>
                     <p>
-                        {{rom.description}}
+                        {{system.description}}
                     </p>
                     <ul class="list-unstyled">
-                        <li>Year: {{rom.year}}</li>
-                        <li>Developer: {{rom.developer}}</li>
-                        <li>Publisher: {{rom.publisher}}</li>
+                        <li>Year: {{system.year}}</li>
+                        <li>Developer: {{system.developer}}</li>
+                        <li>Publisher: {{system.publisher}}</li>
                     </ul>
                 </div>
                 <div class="col-md-4">
-                    <img class="card-img-top" src="{{ asset('uploads/img/rom/'~rom.image) }}" alt="Card image cap">
+                    <img class="card-img-top" src="{{ asset('uploads/img/system/'~system.image) }}" alt="Card image cap">
                 </div>
             </div>
         </div>
@@ -28,8 +28,8 @@
 
 
     <div class="container">
-       <button><a href="{{ path('rom_list') }}">Back</a></button>
-        <button><a href="{{ path("rom_edit", {'id':rom.id}) }}">Modify</a></button>
+        <button><a href="{{ path('system_list') }}">Back</a></button>
+        <button><a href="{{ path("system_edit", {'id':system.id}) }}">Modify</a></button>
     </div>
     {% endblock %}
 

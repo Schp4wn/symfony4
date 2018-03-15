@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <ul>
+        {% for cur_user in user %}
+            <li>
+                {{ cur_user.username }} ({{ cur_user.email }})
+                {% if is_granted('ROLE_USER') %}
+                    (<a href="{{ path('user_edit', {'id':cur_user.id}) }}">Edit</a> - <a href="{{ path('user_delete', {'id':cur_user.id}) }}">Delete</a>)
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul><br/><a href="{{ path('user_add') }}">Add User</a></p>
+
+    <div class="container">
+       <button><a href="{{ path('home') }}">Back</a></button>
+        
+    </div>
+    {# </ul><br/><a href="{{ path('user_edit') }}">Edit User</a></p> #}
+{% endblock %}

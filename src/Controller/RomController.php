@@ -53,6 +53,14 @@ class RomController extends Controller
             // but, the original `$task` variable has also been updated
 
             $rom = $form->getData();
+            
+            //Images
+            $file = $newRom->getImage();
+            $definitiveFileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
+            $file->move($this->getParameter('upload_images_directory').'/rom',$definitiveFileName);
+            $newRom->setImage($definitiveFileName);
+
+            
 
             $this->addFlash(
                 'notice',
@@ -81,8 +89,16 @@ class RomController extends Controller
         $form->handleRequest($request);
         if ($form->isSubmitted()) {
             if ($form->isValid()) {
+                
 
                 $newRom = $form->getData();
+
+                //Images
+                $file = $newRom->getImage();
+                $definitiveFileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
+                $file->move($this->getParameter('upload_images_directory').'/rom',$definitiveFileName);
+                $newRom->setImage($definitiveFileName);
+
                 $manager = $this->getDoctrine()->getManager();
                 $manager->persist($newRom);
                 $manager->flush();
@@ -100,6 +116,12 @@ class RomController extends Controller
         );
     }
 
+    /**
+     * @return string
+     */
+    private function generateUniqueFileName(){
+        return md5(uniqid());
+    }
 
     /**
      * @Route("/rom/delete/{id}", name="rom_delete")

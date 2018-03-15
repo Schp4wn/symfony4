@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <div class="container">
+    {% if systemList is defined %}
+        <div style="overflow-x:auto;">
+            <table id="table">
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Year</th>
+                    <th>Publisher</th>
+                    <th>Developer</th>
+                    <th>Del</th>
+                </tr>
+                {% for system in systemList %}
+                    <tr>
+                        <td><a href="{{ path("system_show", {'id':system.id}) }}">{{ system.name }}</a></td>
+                        <td>{{ system.description }}</td>
+                        <td>{{ system.year }}</td>
+                        <td>{{ system.publisher }}</td>
+                        <td>{{ system.developer }}</td>
+                        <td><a href="{{ path("system_delete", {'id':system.id}) }}">Delete</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        </div>
+    {% endif %}
+
+{% endblock %}
+
