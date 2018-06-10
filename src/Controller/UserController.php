@@ -6,6 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
+
 class UserController extends Controller
 {
     /**
@@ -14,10 +15,11 @@ class UserController extends Controller
     public function userList() {
         $repo = $this->getDoctrine()->getRepository(User::class);
         $user = $repo->findAll();
-        return $this->render('user/home.html.twig', array(
+        return $this->render('User/home.html.twig', array(
             'user'=>$user
         ));
     }
+
     /**
      * @Route("/user/{id}", name="user_detail", requirements={"id"="\d*"})
      */
@@ -25,7 +27,7 @@ class UserController extends Controller
         $user = $this->getDoctrine()
             ->getRepository(User::class)
             ->findOneByIdFull($id);
-        return $this->render('user/detail.html.twig', array(
+        return $this->render('User/detail.html.twig', array(
             'user'=>$user
         ));
     }
@@ -62,7 +64,7 @@ class UserController extends Controller
                 $msg = 'Thank you Mario, but the Princess is in another Castle!';
             }
         }
-        return $this->render("user/form.html.twig",
+        return $this->render("User/form.html.twig",
             array(
                 "form"=>$form->createView(),
                 "message"=>$msg
@@ -91,7 +93,7 @@ class UserController extends Controller
                 $msg = 'Thank you Mario, but the Princess is in another Castle!';
             }
         }
-        return $this->render("user/form.html.twig",
+        return $this->render("User/form.html.twig",
             array(
                 "form"=>$form->createView(),
                 "message"=>$msg

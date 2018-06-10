@@ -14,7 +14,7 @@ class AuthController extends Controller
         $error = $authUtils->getLastAuthenticationError();
         // last username entered by the user
         $lastUsername = $authUtils->getLastUsername();
-        return $this->render('auth/login.html.twig', array(
+        return $this->render('Auth/login.html.twig', array(
             'last_username' => $lastUsername,
             'error'         => $error,
         ));

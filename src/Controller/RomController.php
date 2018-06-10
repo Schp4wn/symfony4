@@ -32,7 +32,7 @@ class RomController extends Controller
             );
         }
 //      return new Response('Check out this great product: '.$rom->getName() .$rom->getDescription());
-        return $this->render('romshow.html.twig', ['rom' => $rom]);
+        return $this->render('Roms/romshow.html.twig', ['rom' => $rom]);
 //        return $this->redirectToRoute('rom_show', ['id' => $rom->getId();
     }
 
@@ -52,7 +52,7 @@ class RomController extends Controller
             // $form->getData() holds the submitted values
             // but, the original `$task` variable has also been updated
 
-            $rom = $form->getData();
+            $newRom = $form->getData();
             
             //Images
             $file = $newRom->getImage();
@@ -60,7 +60,10 @@ class RomController extends Controller
             $file->move($this->getParameter('upload_images_directory').'/rom',$definitiveFileName);
             $newRom->setImage($definitiveFileName);
 
-            
+            $manager = $this->getDoctrine()->getManager();
+            $manager->persist($newRom);
+            $manager->flush();
+
 
             $this->addFlash(
                 'notice',
@@ -75,7 +78,7 @@ class RomController extends Controller
             return $this->redirectToRoute('rom_add');
         }
 
-        return $this->render('romadd.html.twig', array(
+        return $this->render('Roms/romadd.html.twig', array(
             'form' => $form->createView(),
         ));
     }
@@ -109,7 +112,7 @@ class RomController extends Controller
                 );
             }
         }
-        return $this->render("romadd.html.twig",
+        return $this->render("Roms/romadd.html.twig",
             array("form" => $form->createView(),
 
             )
@@ -158,7 +161,7 @@ class RomController extends Controller
             ->findAllAndOrderAsc();
 
         return $this->render(
-            'roms.html.twig', array('romList' => $rom));
+            'Roms/roms.html.twig', array('romList' => $rom));
 //            return new Response('Check out all the great Roms: '.$rom->getName());
     }
 }

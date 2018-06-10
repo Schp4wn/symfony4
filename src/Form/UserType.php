@@ -21,14 +21,14 @@ class UserType extends AbstractType
             ->add("username",
                 TextType::class,
                 [
-                    'attr'=>["placeholder"=>"Name"],
+                    'attr'=>["placeholder"=>"Enter Name"],
                     'required'=>true
                 ]
             )
             ->add("email",
                 EmailType::class,
                 [
-                    'attr'=>["placeholder"=>"Email"],
+                    'attr'=>["placeholder"=>"Enter Email"],
                     'required'=>true
                 ]
             )
@@ -38,7 +38,20 @@ class UserType extends AbstractType
                     'attr'=>["placeholder"=>"Password"],
                     'required'=>true
                 ]
-            
+            )
+            ->add("isActive",
+            CheckboxType::class,
+                [
+                    'attr'=>["placeholder"=>"Utilisateur actif ?"],
+                    'required'=>true
+                ]
+            )
+            ->add("role" ,
+            TextType::class,
+                [
+                    'attr'=>["placeholder"=>"Enter a Role"],
+                    'required'=>true
+                ]
             
             
             );

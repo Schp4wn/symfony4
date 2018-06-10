@@ -32,7 +32,7 @@ class SystemController extends Controller
             );
         }
 //      return new Response('Check out this great product: '.$system->getName() .$system->getDescription());
-        return $this->render('systemshow.html.twig', ['system' => $system]);
+        return $this->render('Systems/systemshow.html.twig', ['system' => $system]);
 //        return $this->redirectToRoute('system_show', ['id' => $system->getId();
     }
 
@@ -52,7 +52,7 @@ class SystemController extends Controller
             // $form->getData() holds the submitted values
             // but, the original `$task` variable has also been updated
 
-            $system = $form->getData();
+            $newSystem = $form->getData();
 
             //Images
             $file = $newSystem->getImage();
@@ -73,7 +73,7 @@ class SystemController extends Controller
             return $this->redirectToRoute('system_add');
         }
 
-        return $this->render('systemadd.html.twig', array(
+        return $this->render('Systems/systemadd.html.twig', array(
             'form' => $form->createView(),
         ));
     }
@@ -106,7 +106,7 @@ class SystemController extends Controller
                 );
             }
         }
-        return $this->render("systemadd.html.twig",
+        return $this->render("Systems/systemadd.html.twig",
             array("form" => $form->createView(),
 
             )
@@ -156,7 +156,7 @@ class SystemController extends Controller
             ->findAllAndOrderAsc();
 
         return $this->render(
-            'system.html.twig', array('systemList' => $system));
+            'Systems/system.html.twig', array('systemList' => $system));
 //            return new Response('Check out all the great System: '.$system->getName());
     }
 }
