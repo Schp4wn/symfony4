@@ -18,24 +18,30 @@ You need a PHP server, composer and npm installed on your machine. You can find 
 
 Let's say you want to install RomDB in the "RomDB" folder :
 
-    Clone this repository (get the author's code) git clone https://github.com/Schp4wn/synfony4.git receet
-    Install the software (Angular and Symfony need to set up a lot of dependancies missing from the Github release) cd symfony ; composer install cd ../angular ; npm install
+   ** Clone this repository: **
+    (get the author's code) git clone https://github.com/Schp4wn/synfony4.git
+    ** Install the software **
+    (Angular and Symfony need to set up a lot of dependancies missing from the Github release)
+    - cd symfony ;
+    - composer install
+    - cd ../angular ;
+    - npm install
     Ensure your PHP server is online
 
-    Reset the database (creation, and filling with default data) :
-     cd ../XXX/
-    ; php bin/console doctrine:database:create 
-    ; php bin/console doctrine:migrations:diff 
-    ; php bin/console doctrine:migrations:migrate 
-    ; php bin/console doctrine:fixtures:load
+    ** Reset the database (creation, and filling with default data): **
+    - cd../XXX/
+    - php bin/console doctrine:database:create 
+    - php bin/console doctrine:migrations:diff 
+    - php bin/console doctrine:migrations:migrate 
+    - php bin/console doctrine:fixtures:load
     Launch the Node server for the frontend part : cd ../angular ; ng serve
 
 That's it ! You can now access :
 
 ## Built With
 
-* [Symfony4](https://github.com/symfony/symfony) - Baackend
-* [Angular-cli](https://github.com/angular/angular-cli) - Frontend
+* [Symfony4](https://github.com/symfony/symfony) - Backend
+* ~~ [Angular-cli](https://github.com/angular/angular-cli) - Frontend ~~
 * [Twig](https://github.com/twigphp/Twig) - templating
 
 ## Contributing
