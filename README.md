@@ -18,9 +18,9 @@ You need a PHP server, composer and npm installed on your machine. You can find 
 
 Let's say you want to install RomDB in the "RomDB" folder :
 
-   ** Clone this repository: **
+   **Clone this repository:**
     (get the author's code) git clone https://github.com/Schp4wn/synfony4.git
-    ** Install the software **
+    **Install the software**
     (Angular and Symfony need to set up a lot of dependancies missing from the Github release)
     - cd symfony ;
     - composer install
@@ -30,10 +30,10 @@ Let's say you want to install RomDB in the "RomDB" folder :
 
     ** Reset the database (creation, and filling with default data): **
     - cd../XXX/
-    - php bin/console doctrine:database:create 
-    - php bin/console doctrine:migrations:diff 
-    - php bin/console doctrine:migrations:migrate 
-    - php bin/console doctrine:fixtures:load
+    - php bin/console doctrine:database:create
+    - php bin/console doctrine:migrations:diff
+    - php bin/console doctrine:migrations:migrate
+    - ~~php bin/console doctrine:fixtures:load~~
     Launch the Node server for the frontend part : cd ../angular ; ng serve
 
 That's it ! You can now access :
@@ -41,8 +41,9 @@ That's it ! You can now access :
 ## Built With
 
 * [Symfony4](https://github.com/symfony/symfony) - Backend
-* ~~ [Angular-cli](https://github.com/angular/angular-cli) - Frontend ~~
+~~[Angular-cli](https://github.com/angular/angular-cli) - Frontend~~
 * [Twig](https://github.com/twigphp/Twig) - templating
+* [Composer](https://getcomposer.org/) - Dependency Management
 
 ## Contributing
 
@@ -50,7 +51,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Authors
 
-* **Steven Poscher** - *Initial work* - [Schp4wn](https://github.com/Schp4wn)
+* **Schp4wn** - *Initial work* - [Schp4wn](https://github.com/Schp4wn)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
@@ -60,4 +61,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Senvisage
+* [Senvisage](https://github.com/senvisage)

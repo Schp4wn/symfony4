@@ -1,6 +1,127 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}ROMLIST: {% endblock %}
+
 {% block main %}
+
+
+    <div class="content-con-feature-a" style="background: #000; height: 100%; max-height: unset;">
+        <div id="particles-js-1">
+            <canvas class="particles-js-canvas-el" width="1398" height="950" style="width: 100%; height: 100%;"></canvas></div>
+        <div class="content-con-overlay darkmode-header dm-header">
+        </div>
+        <div class="content-con-outer">
+            <div class="content-con-inner">
+
+                <div class="content-con-wrap-left content-expand ">
+                    <div class="content-txt-wrap scale-content-txt-1 fade-in-onload" style="position: absolute; top: 50%; margin-top: -223.266px; display: block;">
+                        <div class="content-ico-wrap"> </div>
+                        <div class="content-tx1-wrap">
+                            <h1>Open-source
+                                <br> PlayStation 3 Emulator</h1>
+                        </div>
+                        <div class="content-tx2-wrap">
+
+                                {% if romList is defined %}
+
+                                    <table style="padding-top: 5em; margin: 0 auto!important;" id="table">
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Description</th>
+                                            <th>Year</th>
+                                            <th>Rating</th>
+                                            <th>tested?</th>
+                                            <th>Publisher</th>
+                                            <th>Developer</th>
+                                            {% if is_granted('ROLE_USER') %}
+                                                <th>Del</th>
+                                            {% endif %}
+                                        </tr>
+                                        {% for rom in romList %}
+                                            <tr>
+                                                <td><a href="{{ path("rom_show", {'id':rom.id}) }}">{{ rom.name }}</a></td>
+                                                <td>{{ rom.description }}</td>
+                                                <td>{{ rom.year }}</td>
+                                                <td>{{ rom.rating }}</td>
+                                                <td>{{ rom.istested }}</td>
+                                                <td>{{ rom.publisher }}</td>
+                                                <td>{{ rom.developer }}</td>
+                                                {% if is_granted('ROLE_USER') %}
+                                                    <td><a href="{{ path("rom_delete", {'id':rom.id}) }}">Delete</a></td>
+                                                {% endif %}
+                                            </tr>
+                                        {% endfor %}
+                                    </table>
+
+                            {% endif %}
+                            <div class="content-btn-container">
+                                <a href="/#">
+                                    <div class="content-btn-download">
+                                        <span>Download</span>
+                                        <span class="content-tx1-download">
+                                                complete list [2018-08-25] </span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-con-wrap-right content-remove ">
+                    <div class="content-img-wrap" style="display:block; background: url(/img/icons/menu/greeting.png) no-repeat center; background-size: contain;">
+                    </div>
+
+
+                    <div class="video-con-container" style="display:none;">
+                        <div class="video-btn-player-b page-video-1">
+                        </div>
+                        <div class="video-con-slideshow">
+
+                            <div style="">
+                                <img class="video-img-thumb" alt="" src="/img/thumbs/slideshow/null.jpg" style="object-fit: cover;">
+                            </div><div style="display: none;">
+                                <img class="video-img-thumb" alt="" src="/img/thumbs/slideshow/null.jpg" style="object-fit: cover;">
+                            </div><div style="display: none;">
+                                <img class="video-img-thumb" alt="" src="/img/thumbs/slideshow/null.jpg" style="object-fit: cover;">
+                            </div><div style="display: none;">
+                                <img class="video-img-thumb" alt="" src="/img/thumbs/slideshow/null.jpg" style="object-fit: cover;">
+                            </div><div style="display: none;">
+                                <img class="video-img-thumb" alt="" src="/img/thumbs/slideshow/null.jpg" style="object-fit: cover;">
+                            </div><div style="display: none;">
+                                <img class="video-img-thumb" alt="" src="/img/thumbs/slideshow/null.jpg" style="object-fit: cover;">
+                            </div><div style="display: none;">
+                                <img class="video-img-thumb" alt="" src="/img/thumbs/slideshow/null.jpg" style="object-fit: cover;">
+                            </div><div style="display: none;">
+                                <img class="video-img-thumb" alt="" src="/img/thumbs/slideshow/null.jpg" style="object-fit: cover;">
+                            </div><div style="display: none;">
+                                <img class="video-img-thumb" alt="" src="/img/thumbs/slideshow/null.jpg" style="object-fit: cover;">
+                            </div><div style="display: none;">
+                                <img class="video-img-thumb" alt="" src="/img/thumbs/slideshow/null.jpg" style="object-fit: cover;">
+                            </div></div>
+                    </div>
+
+                    <div class="timer-con-container" style="display:none;">
+                        <div id="timer-tx1-body">Kaboom!</div>
+                        <div class="timer-con-separator">
+                        </div>
+                        <div class="timer-con-wrapper">
+                            <a class="#" target="_blank">
+                                <div class="timer-ico-body">
+                                </div>
+                            </a>
+                            <div class="timer-tx2-body">
+                                <span>Join the discussion on </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{#
     <div class="container">
     {% if romList is defined %}
         <div style="overflow-x:auto;">
@@ -13,7 +134,9 @@
                     <th>tested?</th>
                     <th>Publisher</th>
                     <th>Developer</th>
-                    <th>Del</th>
+                    {% if is_granted('ROLE_USER') %}
+                        <th>Del</th>
+                    {% endif %}
                 </tr>
                 {% for rom in romList %}
                     <tr>
@@ -24,13 +147,15 @@
                         <td>{{ rom.istested }}</td>
                         <td>{{ rom.publisher }}</td>
                         <td>{{ rom.developer }}</td>
-                        <td><a href="{{ path("rom_delete", {'id':rom.id}) }}">Delete</a></td>
+                            {% if is_granted('ROLE_USER') %}
+                                <td><a href="{{ path("rom_delete", {'id':rom.id}) }}">Delete</a></td>
+                            {% endif %}
                     </tr>
                 {% endfor %}
             </table>
         </div>
-        </div>
-    {% endif %}
+    </div>
+    {% endif %}#}
 
 {% endblock %}
 

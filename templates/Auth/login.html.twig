@@ -7,6 +7,93 @@
         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
+    {#
+    <div id="pageContainer">
+        <div id="formContainer">
+            <div id="logo"><img src="https://pbs.twimg.com/profile_images/810772925317951488/_vANfz0U.jpg"/></div>
+            <div id="forms">
+                <form id="whyReg">
+                    <div class="fadeUp">
+                        <div class="formHead">
+                            <h1>WHY REGISTER?</h1>
+                        </div>
+                        <div class="formDiv">
+                            <ul>
+                                <li>Access to member only pages.</li>
+                                <li>Able to comment on any post to share your opinion.</li>
+                                <li>Able to download source code files.</li>
+                            </ul>
+                        </div>
+                        <div class="formOther"><a class="regBtn" href="#">Close</a></div>
+                    </div>
+                </form>
+
+                <form id="forgot">
+                    <div class="fadeUp">
+                        <div class="formHead">
+                            <h1>FORGOT PASSWORD?</h1>
+                            <p>Looks like you forgot your password</p>
+                        </div>
+                        <div class="formDiv">
+                            <input type="email" placeholder="Type your email"/>
+                        </div>
+                        <div class="formDiv">
+                            <input type="submit" value="SEND EMAIL"/>
+                        </div>
+                        <div class="formOther"><a class="backLoginF" href="#">BACK TO LOGIN</a><a href="#">CONTACT STAFF</a></div>
+                    </div>
+                </form>
+
+                <form id="login" action="{{ path('login') }}" method="post">
+                    <div class="formHead">
+                        <h1>WELCOME BACK</h1>
+                        <p>Login to continue</p>
+                    </div>
+                    <div class="formDiv">
+                        <input type="text" placeholder="Username" name="_username" value="{{ last_username }}"/>
+                    </div>
+                    <div class="formDiv">
+                        <input type="password" placeholder="Password" name="_password"/>
+                    </div>
+
+                           If you want to control the URL the user
+                           is redirected to on success (more details below)
+
+                    <input type="hidden" name="_target_path" value="/" />
+
+                    <div class="formDiv">
+                        <input type="submit" value="LOGIN"/>
+                    </div>
+                    <div class="formOther"><a class="forgotBtn" href="#">FORGOT PASSWORD?</a><a class="needAccount" href="#">NEED AN ACCOUNT?</a></div>
+                </form>
+
+
+                <form id="register">
+                    <div class="formHead">
+                        <h1>BECOME A BRO</h1>
+                        <p>Register to gain full access</p>
+                    </div>
+                    <div class="formDiv">
+                        <input type="text" placeholder="Username" name="username"/>
+                    </div>
+                    <div class="formDiv">
+                        <input type="email" placeholder="Email" name="email"/>
+                    </div>
+                    <div class="formDiv">
+                        <input type="password" placeholder="Password" name="password"/>
+                    </div>
+                    <div class="formDiv">
+                        <input type="submit" value="REGISTER"/>
+                    </div>
+                    <div class="formOther"><a class="backLogin" href="#">BACK TO LOGIN</a><a class="regBtn" href="#">WHY REGISTER?</a></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
     <form action="{{ path('login') }}" method="post">
         <label for="username">Username:</label>
         <input type="text" id="username" name="_username" value="{{ last_username }}" />
@@ -14,13 +101,82 @@
         <label for="password">Password:</label>
         <input type="password" id="password" name="_password" />
 
-        {#
+
             If you want to control the URL the user
             is redirected to on success (more details below)
-        #}
+
         <input type="hidden" name="_target_path" value="/" />
 
 
         <button type="submit">login</button>
     </form>
+#}
+
+
+
+
+
+
+
+   {# <div class='brand'>
+        <a href='https://www.jamiecoulter.co.uk' target='_blank'>
+            <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/logo.png'>
+        </a>
+    </div>#}
+<form action="{{ path('login') }}" method="post">
+    <div class='login'>
+        <div class='login_title'>
+            <span>Login to your account</span>
+        </div>
+        <div class='login_fields'>
+            <div class='login_fields__user'>
+                <div class='icon'>
+                    <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/user_icon_copy.png'>
+                </div>
+                <input placeholder='Username' type='text' id="username" name="_username" value="{{ last_username }}"/>
+                <div class='validation'>
+                    <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/tick.png'>
+                </div>
+            </div>
+            <div class='login_fields__password'>
+                <div class='icon'>
+                    <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/lock_icon_copy.png'>
+                </div>
+                <input placeholder='Password' type='password' id="password" name="_password">
+
+                <div class='validation'>
+                    <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/tick.png'>
+                </div>
+                </input>
+            </div>
+            <div class='login_fields__submit'>
+                <input type='submit' value='Login'>
+                {#<input type="hidden" name="_target_path" value="/" />#}
+
+
+
+
+
+                <div class='forgot'>
+                    <a href='#'>Forgotten password?</a>
+                </div>
+            </div>
+        </div>
+        <div class='success'>
+            <h2>Authentication Success</h2>
+            <p>Welcome back</p>
+        </div>
+        <div class='disclaimer'>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce semper laoreet placerat. Nullam semper auctor justo, rutrum posuere odio vulputate nec.</p>
+        </div>
+    </div>
+    <div class='authent'>
+        <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/puff.svg'>
+        <p>Authenticating...</p>
+    </div>
+
+</form>
+
+
+
 {% endblock %}

@@ -2,22 +2,27 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="theme-color" content="#4c5bd7">
+        <meta name=viewport content="width=device-width, initial-scale=.6" />
         <title>
-            {% block title %}
-                Test!
-            {% endblock %}
+            {% block title %} Test! {% endblock %}
         </title>
-        {% block stylesheets %}
-            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-            {#<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">            #}{#<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">#}
-            <link rel="stylesheet" href="{{ asset('css/theme.css') }}">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('css/anim.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/darkmode.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/menu.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/scale.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+{#            <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">#}
         {% endblock %}
     </head>
 
+
+    {% include('navbar.html.twig') %}
     <body>
-        {% include('navbar.html.twig') %}
 
         {# you can read and display just one flash message type... #}
         {% for message in app.flashes('notice') %}
@@ -36,27 +41,38 @@
         {% endfor %}
 
 
-        {% block body %}<section class="canvas-wrapper"></section>
-        {% endblock %}
-
         {% block main %}
         {% endblock %}
 
-        {% include('footer.html.twig') %}
+
+        {#{% block body %}
+        {% endblock %}#}
+
+        {#{% block footer %}
+        {% endblock %}#}
+
+
+
+    {% include('footer.html.twig') %}
 
         {% block javascripts %}
-            {#Bootstrap4#}
-            {#<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>#}
-            {#<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>#}
-            {#<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>#}
-
-
-            <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-            {#<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>#}
-            {#<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>#}
-            {#<script src="{{ asset('js/app.js') }}"></script>#}
+            <script src="{{ asset('js/timer.js') }}"></script>
+            <script src="{{ asset('js/jquery.js') }}"></script>
+            <script src="{{ asset('js/jquery-cookie.js') }}"></script>
+            <script src="{{ asset('js/main.js') }}"></script>
+            <script src="{{ asset('js/darkmode.js') }}"></script>
+            <script src="{{ asset('js/app.js') }}"></script>
+            <script src="{{ asset('js/particles.js') }}"></script>
+            <script src="{{ asset('js/particles-sel.js') }}"></script>
+            <script>
+                {#$(".video-con-slideshow > div:gt(0)").hide();
+                setInterval(function () {
+                    $('.video-con-slideshow > div:first')
+                        .fadeOut(768)
+                        .next()
+                        .fadeIn(768)
+                        .end()
+                        .appendTo('.video-con-slideshow');
+                }, 5000);
+            </script>#}
         {% endblock %}
-
-    </body>
-</html>
-
